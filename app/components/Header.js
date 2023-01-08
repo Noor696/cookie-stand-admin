@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Header(){
     return(
         <header>
-            <nav className="bg-gray-50" >
+            <nav className="bg-red-400" >
             <Link className='inline-flex items-center px-2 mr-4' href='/'>
                     <Image 
                     src='/assets/coologo.png'
@@ -15,7 +15,7 @@ export default function Header(){
                     alt="cookie logo"
                     >
                     </Image>
-                    <span className='text-xl fonr-bold tracking-wide text-black'>Cookie Stand Admin</span>
+                    <span className='text-xl font-bold tracking-wide text-white'>Cookie Stand Admin</span>
                 </Link>
 
             </nav>
