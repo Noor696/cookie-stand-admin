@@ -1,48 +1,48 @@
 import React from "react";
 import { useState } from "react";
 
+export default function Form() {
+  // States
+  const [userLocation, setUserLocation] = useState("");
+  const [Minimum, setMinimum] = useState("");
+  const [Maximum, setMaximum] = useState("");
+  const [Average, setAverage] = useState("");
+  const [fullReplyState, setFullReplyState] = useState([]);
 
+  const handlelocation = (e) => {
+    setUserLocation(e.target.value);
+  };
 
-export default function Form(){
+  const HandelMinimum = (e) => {
+    setMinimum(e.target.value);
+  };
 
-    // States
-    const [userLocation, setUserLocation] = useState("");
-    const [Minimum, setMinimum] = useState("");
-    const [Maximum, setMaximum] = useState("");
-    const [Average, setAverage] = useState("");
-    const [fullReplyState, setFullReplyState] = useState([]);
-
-    const handlelocation = (e) => {
-        setUserLocation(e.target.value);
-    }
-
-    const HandelMinimum = (e) => {
-        setMinimum(e.target.value);
-    }
-
-    const HandelMaximum = (e) => {
-      setMaximum(e.target.value);
-  }
+  const HandelMaximum = (e) => {
+    setMaximum(e.target.value);
+  };
 
   const HandelAverage = (e) => {
     setAverage(e.target.value);
-}
+  };
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-        const userInput = {
-            location : userLocation,
-            Minimum: Minimum,
-            Maximum: Maximum,
-            Average: Average,
-        }
-        console.log(userInput)
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    const userInput = {
+      location: userLocation,
+      Minimum: Minimum,
+      Maximum: Maximum,
+      Average: Average,
+    };
+    console.log(userInput);
 
-        // keep the old values and save the new one using spread operator
-        setFullReplyState([...fullReplyState,userInput])
-    }
+    // keep the old values and save the new one using *spread operator*
+    // if you want to assign the object by value -> use (... & the name of the object)
+    // this is spread operator
+    setFullReplyState([...fullReplyState, userInput]);
+  };
 
-    return (
+  return (
+    <>
       <section>
         <div className="min-h-screen py-20">
           <div className="container mx-auto">
@@ -61,6 +61,12 @@ export default function Form(){
                   <h2 className="text-2xl mb-4">Create Cookie Stand</h2>
                   <form onSubmit={onSubmitHandler}>
                     <div className="grid grid-cols-2 gap-5">
+                      <label
+                        for="Location"
+                        className="pr-3 mb-2 font-bold text-gray-800 "
+                      >
+                        Location :
+                      </label>
                       <input
                         onChange={handlelocation}
                         id="location"
@@ -72,6 +78,12 @@ export default function Form(){
                     </div>
 
                     <div class="mt-5">
+                      <label
+                        for="MinimumC"
+                        className="pr-3 mb-2 font-bold text-gray-800 "
+                      >
+                        Minimum Customers Per Hour :
+                      </label>
                       <input
                         type="text"
                         onChange={HandelMinimum}
@@ -83,17 +95,29 @@ export default function Form(){
                     </div>
 
                     <div class="mt-5">
+                      <label
+                        for="MaximumC"
+                        className="pr-3 mb-2 font-bold text-gray-800 "
+                      >
+                        Maximum Customers Per Hour :
+                      </label>
                       <input
                         type="text"
                         onChange={HandelMaximum}
                         id="maxCustomerPerHour"
                         name="maxCustomerPerHour"
-                        placeholder="maximum Customers Per Hour"
+                        placeholder="Maximum Customers Per Hour"
                         className="border border-red-400 py-1 px-2 w-full"
                       />
                     </div>
 
                     <div class="mt-5">
+                      <label
+                        for="AverageCn"
+                        className="pr-3 mb-2 font-bold text-gray-800 "
+                      >
+                        Average Cookies Per Sale :
+                      </label>
                       <input
                         type="text"
                         onChange={HandelAverage}
@@ -119,8 +143,21 @@ export default function Form(){
           </div>
         </div>
       </section>
-    );
+
+      {/* result section */}
+      <section className="w-full pt-10 text-center shadow-lg shadow-black-50">
+        {fullReplyState.length > 0 &&
+          fullReplyState.map((item, index) => {
+            return (
+              <div>
+                <p>
+                  location : {item.location} : Min Customers : {item.Minimum}:
+                  Max Customers: {item.Maximum}: Avg Cookies : {item.Average}
+                </p>
+              </div>
+            );
+          })}
+      </section>
+    </>
+  );
 }
-
-
-
