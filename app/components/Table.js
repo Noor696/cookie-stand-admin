@@ -10,6 +10,8 @@ export default function Table(props) {
 
     // setTableData([tableData]);
 
+    
+
     return(
         <>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">

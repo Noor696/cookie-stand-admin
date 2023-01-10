@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { useState } from "react";
+import Table from "./Table";
 
 export default function Form(props) {
   // States
@@ -8,6 +11,7 @@ export default function Form(props) {
   const [Maximum, setMaximum] = useState("");
   const [Average, setAverage] = useState("");
   const [fullReplyState, setFullReplyState] = useState([]);
+  const [tableshow, setTableShow] = useState(false);
 
   const handlelocation = (e) => {
     setUserLocation(e.target.value);
@@ -40,6 +44,9 @@ export default function Form(props) {
     // this is spread operator
     setFullReplyState([...fullReplyState, userInput]);
   };
+  const handleShow = () => {
+    setTableShow(true);
+  };
 
   return (
     <>
@@ -49,7 +56,6 @@ export default function Form(props) {
             <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-yellow-50 rounded-xl mx-auto shadow-lg overflow-hidden">
               <div className="w-full flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
                 <h1 className="text-black text-2xl mb-3">Welcome</h1>
-
 
                 <div className="w-full lg:w-1/2 py-16 px-12">
                   <h2 className="text-2xl mb-4">Create Cookie Stand</h2>
@@ -133,8 +139,10 @@ export default function Form(props) {
                     <div class="mt-5">
                       <button
                         class="w-full bg-red-400 py-3 text-center text-white"
-                        type="button" 
-                      >Overview !
+                        type="button"
+                        onClick={handleShow}
+                      >
+                        Overview !
                       </button>
                     </div>
                   </form>
@@ -152,14 +160,44 @@ export default function Form(props) {
           fullReplyState.map((item, index) => {
             return (
               <div>
-                <p>
-                  location : {item.location} : Min Customers : {item.Minimum}:
-                  Max Customers: {item.Maximum}: Avg Cookies : {item.Average}
-                </p>
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left text-red-100 dark:text-red-100">
+                    <thead class="text-xs text-white uppercase bg-red-400 border-b border-gray-400 dark:text-white">
+                      <tr>
+                        <th scope="col" class="px-6 py-3">
+                          Location
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                          Min Customers
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                          Max Customers
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                          Avg Cookies
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-yellow-50 border-b border-blue-400 hover:bg-yellow-100">
+                        <th
+                          scope="row"
+                          class="px-6 py-4 font-medium text-red-400 whitespace-nowrap dark:text-red-400"
+                        >
+                          {item.location}
+                        </th>
+                        <td class="px-6 py-4 text-red-400">{item.Minimum}</td>
+                        <td class="px-6 py-4 text-red-400">{item.Maximum}</td>
+                        <td class="px-6 py-4 text-red-400">{item.Average}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             );
           })}
       </section>
+      {tableshow && <Table />}
     </>
   );
 }
