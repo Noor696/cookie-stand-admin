@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Form() {
+export default function Form(props) {
   // States
   const [userLocation, setUserLocation] = useState("");
   const [Minimum, setMinimum] = useState("");
@@ -133,7 +133,7 @@ export default function Form() {
                     <div class="mt-5">
                       <button
                         class="w-full bg-red-400 py-3 text-center text-white"
-                        type="button"
+                        type="button" 
                       >Overview !
                       </button>
                     </div>

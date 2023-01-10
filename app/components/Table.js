@@ -1,4 +1,4 @@
-import data from "./data";
+import { data } from "./data";
 import React from "react";
 import { useState } from "react";
 import TBody from "./tbody"
@@ -7,6 +7,8 @@ import TFoot from "./tfoot"
 
 export default function Table(props) {
     const [tableData, setTableData] = useState(data);
+
+    // setTableData([tableData]);
 
     return(
         <>
