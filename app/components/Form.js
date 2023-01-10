@@ -46,16 +46,10 @@ export default function Form() {
       <section>
         <div className="min-h-screen py-20">
           <div className="container mx-auto">
-            <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+            <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-yellow-50 rounded-xl mx-auto shadow-lg overflow-hidden">
               <div className="w-full flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
                 <h1 className="text-black text-2xl mb-3">Welcome</h1>
-                <div>
-                  <p className="text-black text-1xl">
-                    <a href="#" className="text-purple-500 font-semibold">
-                      Learn more
-                    </a>
-                  </p>
-                </div>
+
 
                 <div className="w-full lg:w-1/2 py-16 px-12">
                   <h2 className="text-2xl mb-4">Create Cookie Stand</h2>
@@ -136,6 +130,13 @@ export default function Form() {
                         Create !
                       </button>
                     </div>
+                    <div class="mt-5">
+                      <button
+                        class="w-full bg-red-400 py-3 text-center text-white"
+                        type="button"
+                      >Overview !
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -145,6 +146,7 @@ export default function Form() {
       </section>
 
       {/* result section */}
+      {/* render array of object by using map */}
       <section className="w-full pt-10 text-center shadow-lg shadow-black-50">
         {fullReplyState.length > 0 &&
           fullReplyState.map((item, index) => {
