@@ -41,7 +41,7 @@ export default function Header(){
                         </ul>
                     </div>
 
-                    <div class="w-full space-y-2 border-yellow-200 lg:space-y-0 md:w-max lg:border-l">
+                    {/* <div class="w-full space-y-2 border-yellow-200 lg:space-y-0 md:w-max lg:border-l">
                         <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 focus:bg-yellow-100 sm:w-max">
                             <span class="block text-yellow-800 font-semibold text-sm">
                                 Sign up
@@ -52,7 +52,7 @@ export default function Header(){
                                 Login
                             </span>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import './globals.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import { AuthWrapper } from "./contexts/auth";
 
 
 
@@ -16,6 +17,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
+      <AuthWrapper>
       <body>
         <Header />
         <main>
@@ -23,6 +25,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
+      </AuthWrapper>
     </html>
   )
 }
