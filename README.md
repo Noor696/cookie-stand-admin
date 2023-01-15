@@ -11,8 +11,12 @@
  - Password: admin
 
 ![](/public/assets/loginpage.png)
-![](/public/assets/homepage.png)
+* on dark mode :
+![](/public/assets/dp1.png)
 
+![](/public/assets/homepage.png)
+* on dark mode :
+![](/public/assets/dp2.png)
 __________________________________
 **Notes from the lectures:**
 
