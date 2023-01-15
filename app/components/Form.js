@@ -51,19 +51,19 @@ export default function Form(props) {
   return (
     <>
       <section>
-        <div className="min-h-screen py-20">
+        <div className="dark:bg-black min-h-screen py-20">
           <div className="container mx-auto">
-            <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-yellow-50 rounded-xl mx-auto shadow-lg overflow-hidden">
+            <div className="dark:bg-slate-700 flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-yellow-50 rounded-xl mx-auto shadow-lg overflow-hidden">
               <div className="w-full flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
-                <h1 className="text-black text-2xl mb-3">Welcome</h1>
+                <h1 className="dark:text-white text-black text-2xl mb-3">Welcome</h1>
 
                 <div className="w-full lg:w-1/2 py-16 px-12">
-                  <h2 className="text-2xl mb-4">Create Cookie Stand</h2>
+                  <h2 className="text-2xl mb-4 dark:text-white">Create Cookie Stand</h2>
                   <form onSubmit={onSubmitHandler}>
                     <div className="grid grid-cols-2 gap-5">
                       <label
                         for="Location"
-                        className="pr-3 mb-2 font-bold text-gray-800 "
+                        className="pr-3 mb-2 font-bold text-gray-800 dark:text-white"
                       >
                         Location :
                       </label>
@@ -80,7 +80,7 @@ export default function Form(props) {
                     <div class="mt-5">
                       <label
                         for="MinimumC"
-                        className="pr-3 mb-2 font-bold text-gray-800 "
+                        className="pr-3 mb-2 font-bold text-gray-800 dark:text-white"
                       >
                         Minimum Customers Per Hour :
                       </label>
@@ -97,7 +97,7 @@ export default function Form(props) {
                     <div class="mt-5">
                       <label
                         for="MaximumC"
-                        className="pr-3 mb-2 font-bold text-gray-800 "
+                        className="pr-3 mb-2 font-bold text-gray-800 dark:text-white"
                       >
                         Maximum Customers Per Hour :
                       </label>
@@ -114,7 +114,7 @@ export default function Form(props) {
                     <div class="mt-5">
                       <label
                         for="AverageCn"
-                        className="pr-3 mb-2 font-bold text-gray-800 "
+                        className="pr-3 mb-2 font-bold text-gray-800 dark:text-white"
                       >
                         Average Cookies Per Sale :
                       </label>
@@ -130,7 +130,7 @@ export default function Form(props) {
 
                     <div class="mt-5">
                       <button
-                        class="w-full bg-red-400 py-3 text-center text-white"
+                        class="w-full bg-red-400 py-3 text-center text-white dark:bg-slate-500"
                         type="submit"
                       >
                         Create !
@@ -138,7 +138,7 @@ export default function Form(props) {
                     </div>
                     <div class="mt-5">
                       <button
-                        class="w-full bg-red-400 py-3 text-center text-white"
+                        class="w-full bg-red-400 py-3 text-center text-white dark:bg-slate-500"
                         type="button"
                         onClick={handleShow}
                       >
@@ -160,9 +160,9 @@ export default function Form(props) {
           fullReplyState.map((item, index) => {
             return (
               <div>
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                  <table class="w-full text-sm text-left text-red-100 dark:text-red-100">
-                    <thead class="text-xs text-white uppercase bg-red-400 border-b border-gray-400 dark:text-white">
+                <div class="dark:bg-black relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left text-red-100 dark:text-red-100 dark:bg-black">
+                    <thead class="text-xs text-white uppercase bg-red-400 border-b border-gray-400 dark:text-white dark:bg-black">
                       <tr>
                         <th scope="col" class="px-6 py-3">
                           Location

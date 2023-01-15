@@ -7,7 +7,7 @@ export default function Footer(){
     return(
         <footer >
 		
-        <div className="flex flex-col justify-center items-center text-center  p-5 bg-red-400">
+        <div className="flex flex-col justify-center items-center text-center  p-5 bg-red-400 dark:bg-slate-800">
 				<div className="p-1 ">
                 <ul>
 						<p className="text-white font-bold text-1xl pb-6">
@@ -24,7 +24,7 @@ export default function Footer(){
                 
           
         
-        <div className="flex flex-col justify-center items-center text-center  p-5 bg-red-400">
+        <div className="flex flex-col justify-center items-center text-center  p-5 bg-red-400 dark:bg-slate-800">
 				<h1 className=" text-white font-semibold">
 					© 2022-2023 All rights reserved | Build with ❤ by{" "}
 					<span className="hover:text-orange-300 font-semibold cursor-pointer">

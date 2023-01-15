@@ -1,8 +1,9 @@
+'use client';
 import './globals.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { AuthWrapper } from "./contexts/auth";
-
+import ThemeWrapper from "./contexts/theme";
 
 
 export default function RootLayout({
@@ -18,13 +19,15 @@ export default function RootLayout({
       */}
       <head />
       <AuthWrapper>
-      <body>
+      <ThemeWrapper>
+      <body className="dark:bg-black">
         <Header />
         <main>
         {children}
         </main>
         <Footer />
       </body>
+      </ThemeWrapper>
       </AuthWrapper>
     </html>
   )

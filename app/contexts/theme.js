@@ -30,6 +30,7 @@ export default function ThemeWrapper({children}){
         isDarkTheme: true, 
         toggleThemeHandler  //function which allow me to toggle between the theme
     } 
+    useEffect(()=>initialThemeHandle());
 
 
 //static lines ->

@@ -14,9 +14,9 @@ export default function Table(props) {
 
     return(
         <>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-red-100 dark:text-red-100">
-        <thead class="text-xs text-white uppercase bg-red-400 border-b border-gray-400 dark:text-white">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg dark:bg-slate-700">
+    <table class="w-full text-sm text-left text-red-100">
+        <thead class="text-xs text-white uppercase bg-red-400 border-b border-gray-400 dark:text-black">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Location

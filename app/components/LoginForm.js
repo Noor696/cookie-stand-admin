@@ -31,8 +31,8 @@ function submitHandler(e) {
         <div class="container mx-auto h-full flex flex-1 justify-center items-center">
           <div class="w-full max-w-lg">
             <div class="leading-loose">
-              <form onSubmit={submitHandler} class="max-w-sm m-4 p-10 bg-red-500 bg-opacity-25 rounded shadow-xl">
-                <p class="text-red font-medium text-center text-lg font-bold">
+              <form onSubmit={submitHandler} class="max-w-sm m-4 p-10 bg-red-500 bg-opacity-25 rounded shadow-xl dark:bg-slate-700">
+                <p class="text-red font-medium text-center text-lg font-bold dark:text-white">
                   LOGIN
                 </p>
                 <div class="">
